@@ -1,3 +1,5 @@
+<% flash[:errors] ||= [] %>
+
 <div id="errors_and_notices">
   <% flash[:errors].each do |error| %>
     <p class="error-msg"><%= error %></p>
