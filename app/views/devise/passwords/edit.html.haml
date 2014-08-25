@@ -4,14 +4,10 @@
   = f.hidden_field :reset_password_token
 
   %div
-    = f.label :password, "New password"
-    %br
-    = f.password_field :password, autofocus: true, autocomplete: "off"
+    = f.password_field :password, autofocus: true, autocomplete: "off", placeholder: "New Password"
 
   %div
-    = f.label :password_confirmation, "Confirm new password"
-    %br
-    = f.password_field :password_confirmation, autocomplete: "off"
+    = f.password_field :password_confirmation, autocomplete: "off", placeholder: "Confirm New Password"
 
   %div
     = f.submit "Change my password"

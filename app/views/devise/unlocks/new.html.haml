@@ -3,9 +3,7 @@
 = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
 
   %div
-    = f.label :email
-    %br
-    = f.email_field :email, autofocus: true
+    = f.email_field :email, autofocus: true, placeholder: "Email"
 
   %div
     = f.submit "Resend unlock instructions"
