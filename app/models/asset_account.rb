@@ -1,4 +1,4 @@
 class AssetAccount < Account
   belongs_to :user
-  validates :context, inclusion: { in: ["liquid", "investment", "insurance", "other"] }
+  validates :context, inclusion: { in: ["Liquid", "Investment", "Insurance", "Other"] }
 end
