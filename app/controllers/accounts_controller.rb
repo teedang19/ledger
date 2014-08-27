@@ -6,7 +6,15 @@ class AccountsController < ApplicationController
 
   def create
     @account = Account.new(account_params)
-    render @account.save ? @account : 'new'
+    if @account.save
+      redirect_to account_path(@account)
+    else
+      render 'new'
+    end
+  end
+
+  def show
+    @account = Account.find(params[:id])
   end
 
   private
