@@ -5,8 +5,8 @@
     = f.text_field :name
 
   %div
-    = f.label :type, "Account Type"
-    = f.select :type, options_for_select([["Asset", "AssetAccount"], ["Debt", "DebtAccount"]])
+    = f.label :account_classification, "Account Type"
+    = f.select :account_classification, options_for_select([["Asset", "Asset Account"], ["Debt", "Debt Account"]])
 
   %div
     = f.label :context

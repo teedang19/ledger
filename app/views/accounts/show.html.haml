@@ -1,1 +1,5 @@
-%h2= "Account details for #{@account.name}"
+%h2= "Details for #{@account.account_classification} '#{@account.name}'"
+%p= "Balance: $ #{@account.balance}"
+%p= @account.context
+
+= link_to "Edit this Account", edit_account_path(@account)
