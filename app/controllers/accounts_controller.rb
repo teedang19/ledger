@@ -1,4 +1,5 @@
 class AccountsController < ApplicationController
+  before_action :set_account, only: [:show, :edit, :update, :destroy]
 
   def new
     @account = Account.new
@@ -14,12 +15,18 @@ class AccountsController < ApplicationController
   end
 
   def show
-    @account = Account.find(params[:id])
+  end
+
+  def edit
   end
 
   private
 
-  def account_params
-    params.require(:account).permit(:name, :type, :context, :balance)
-  end
+    def set_account
+      @account = Account.find(params[:id])
+    end
+
+    def account_params
+      params.require(:account).permit(:name, :account_classification, :context, :balance)
+    end
 end
