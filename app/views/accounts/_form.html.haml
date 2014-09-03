@@ -6,11 +6,11 @@
 
   %div
     = f.label :account_classification, "Account Type"
-    = f.select :account_classification, options_for_select([["Asset", "Asset Account"], ["Debt", "Debt Account"]])
+    = f.select :account_classification, options_for_select([["Asset", "Asset Account"], ["Debt", "Debt Account"]], @account.account_classification)
 
   %div
     = f.label :context
-    = f.select :context, grouped_options_for_select([["Asset", ["Liquid", "Investment", "Insurance", "Other"]], ["Debt", ["Credit Card", "Student Loan", "Other"]]]), include_blank: true
+    = f.select :context, grouped_options_for_select([["Asset", ["Liquid", "Investment", "Insurance", "Other"]], ["Debt", ["Credit Card", "Student Loan", "Other"]]], @account.context), include_blank: true
 
   %div
     = f.label :balance, "Current Balance"
