@@ -1,12 +1,17 @@
 class AccountsController < ApplicationController
   before_action :set_account, only: [:show, :edit, :update, :destroy]
 
+  def index
+    @all_accounts = current_user.accounts
+  end
+
   def new
     @account = Account.new
   end
 
   def create
     @account = Account.new(account_params)
+    @account.user = current_user
     if @account.save
       redirect_to account_path(@account)
     else
@@ -18,6 +23,14 @@ class AccountsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @account.update(account_params)
+      redirect_to account_path(@account)
+    else
+      render 'edit'
+    end
   end
 
   private
