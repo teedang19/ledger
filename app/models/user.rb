@@ -4,6 +4,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :async
 
-  has_many :asset_accounts
-  has_many :debt_accounts
+  has_many :accounts
 end
