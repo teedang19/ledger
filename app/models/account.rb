@@ -1,7 +1,7 @@
 class Account < ActiveRecord::Base
   belongs_to :user
   validates :account_classification, inclusion: { in: ["Debt Account", "Asset Account"] }
-  validates :context_by_classification
+  validate :context_by_classification
 
   private
 
