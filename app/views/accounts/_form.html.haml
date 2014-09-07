@@ -6,7 +6,7 @@
 
   %div
     = f.label :account_classification, "Account Type"
-    = f.select :account_classification, options_for_select([["Asset", "Asset Account"], ["Debt", "Debt Account"]], @account.account_classification)
+    = f.select :account_classification, options_for_select([["Asset", "Asset Account"], ["Debt", "Debt Account"]], @account.account_classification), include_blank: true
 
   %div
     = f.label :context
