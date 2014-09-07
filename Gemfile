@@ -38,7 +38,9 @@ gem 'devise-async'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+gem 'cancan'
 gem 'rails_admin'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
