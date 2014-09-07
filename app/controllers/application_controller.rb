@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
     def after_sign_in_path_for(resource)
-      accounts_path
+      resource.admin? ? rails_admin_path : accounts_path
     end
 
   protected
