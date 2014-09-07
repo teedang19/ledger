@@ -4,6 +4,6 @@
   %p= "Acct Type: #{account.account_classification}"
   %p= "Acct Context: #{account.context}"
   %p= "Acct Balance: #{account.balance}"
-  %p= "Acct ID: #{account.id}"
+  %p= link_to "Edit", edit_account_path(account)
 
 = link_to "Add a new financial account", new_account_path
