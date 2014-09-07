@@ -15,6 +15,7 @@ class AccountsController < ApplicationController
     if @account.save
       redirect_to account_path(@account)
     else
+      flash[:errors] = @account.errors.full_messages
       render 'new'
     end
   end
@@ -29,6 +30,7 @@ class AccountsController < ApplicationController
     if @account.update(account_params)
       redirect_to account_path(@account)
     else
+      flash[:errors] = @account.errors.full_messages
       render 'edit'
     end
   end
