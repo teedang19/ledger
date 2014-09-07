@@ -39,6 +39,9 @@ class User < ActiveRecord::Base
       field :first_name
       field :last_name
       field :email
+      field :accounts do
+        read_only true
+      end
     end
 
   end
