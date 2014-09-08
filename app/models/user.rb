@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     self.accounts.where(account_classification: "Debt Account").pluck(:balance).inject(:+)
   end
 
+  def net_worth
+    assets_total + debts_total
+  end
+
   rails_admin do
     
     object_label_method do
