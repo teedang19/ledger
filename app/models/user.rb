@@ -15,12 +15,20 @@ class User < ActiveRecord::Base
     "#{last_name}, #{first_name}"
   end
 
+  def asset_accounts
+    self.accounts.where(account_classification: "Asset Account")
+  end
+
   def assets_total
-    self.accounts.where(account_classification: "Asset Account").pluck(:balance).inject(:+)
+    asset_accounts.pluck(:balance).inject(:+)
+  end
+
+  def debt_accounts
+    self.accounts.where(account_classification: "Debt Account")
   end
 
   def debts_total
-    self.accounts.where(account_classification: "Debt Account").pluck(:balance).inject(:+)
+    debt_accounts.pluck(:balance).inject(:+)
   end
 
   def net_worth
