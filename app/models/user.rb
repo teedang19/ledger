@@ -15,6 +15,14 @@ class User < ActiveRecord::Base
     "#{last_name}, #{first_name}"
   end
 
+  def assets_total
+    self.accounts.where(account_classification: "Asset Account").pluck(:balance).inject(:+)
+  end
+
+  def debts_total
+    self.accounts.where(account_classification: "Debt Account").pluck(:balance).inject(:+)
+  end
+
   rails_admin do
     
     object_label_method do
